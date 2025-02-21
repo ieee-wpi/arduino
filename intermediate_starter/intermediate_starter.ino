@@ -11,8 +11,8 @@
 
 // Open-Meteo API
 const char* WEATHER_URL = "http://api.open-meteo.com/v1/forecast?"
-                          "latitude=?" // TODO: REPLACE ? WITH LATITUDE
-                          "&longitude=?" // TODO: REPLACE ? WITH LONGITUDE
+                          "latitude=23" // TODO: REPLACE ? WITH LATITUDE
+                          "&longitude=32" // TODO: REPLACE ? WITH LONGITUDE
                           "&current=temperature_2m,relative_humidity_2m,apparent_temperature,weather_code"
                           "&daily=temperature_2m_max,temperature_2m_min"
                           "&timezone=America%2FNew_York"
