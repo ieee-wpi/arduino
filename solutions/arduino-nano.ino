@@ -42,7 +42,8 @@ void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);
   pinMode(10, OUTPUT);
-  pinMode(2, INPUT);
+  pinMode(2, INPUT_PULLUP);
+  pinMode(3, INPUT_PULLUP);
   }
 
 
@@ -57,16 +58,17 @@ void loop() {
     tone(10, NOTE_FREQS[idx], 100);
     prev_note = NOTE_FREQS[idx];
   }
-  if (digitalRead(2) == 1){
+  
+  if (digitalRead(2) == 0){
     delay(5);
-    if (digitalRead(2) ==1){
+    if (digitalRead(2) ==0){
     NOTES_FOR_SONG[nfs_idx] = prev_note;
     nfs_idx +=1;
     Serial.println("New Not Added");
     }}
-   if (digitalRead(3) == 1){
+   if (digitalRead(3) == 0){
     delay(5);
-    if (digitalRead(3) == 1){
+    if (digitalRead(3) == 0){
     for(int i = 0; i< max_num_notes; i++){
       tone(10, NOTES_FOR_SONG[i], 400);
       delay(500);
